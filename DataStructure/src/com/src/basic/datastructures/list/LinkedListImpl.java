@@ -12,8 +12,36 @@ public class LinkedListImpl{
 		ls.add(20);
 		ls.add(30);
 		ls.add(40);
+		ls.add(50);
+		ls.add(60);
+		
 		System.out.println("Size of Linked List is:-  "+ls.size());
+		System.out.println();
+		ls.print();
+		
+		ls.searchDelete(40);
+		System.out.println("\n List is now \n");
+		ls.print();
+		System.out.println("\n Size of Linked List is:-  "+ls.size());
+		
+		ls.searchDelete(10);
+		System.out.println("\n Size of Linked List is:-  "+ls.size()+"  head is now"+ls.head.data);
+		
+		System.out.println("\n List is now \n");
+		ls.print();
+		ls.searchDelete(60);
+		System.out.println("\n Size of Linked List is:-  "+ls.size()+"  head is now"+ls.head.data);
 
+		
+		System.out.println("\n  List is now \n");
+		ls.print();
+		
+		System.out.println("\n  Does list contain 50 \n"+ls.contains(50));
+		System.out.println("\n  Does list contain 50 \n"+ls.contains(10));
+		
+		System.out.println("\n  After deleting last element of list \n");
+		ls.deleteLast();
+		ls.print();
 	}
 
 }

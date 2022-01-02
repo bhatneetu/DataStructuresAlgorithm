@@ -5,11 +5,7 @@ public class LinkedList implements List{
 	Node head;
 	
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
-
+	
 	@Override
 	public void add(int n) {
 		Node new_node= new Node(n);
@@ -29,14 +25,42 @@ public class LinkedList implements List{
 	}
 
 	@Override
-	public void delete() {
-		// TODO Auto-generated method stub
+	public void deleteLast() {
+		if(head==null) {
+			System.out.println("List is null nothing to delete");
+			return;
+		}else {
+			Node current=head;
+			Node prev = null;
+			while(current!=null && current.next!=null) {
+				prev=current;
+				current=current.next;
+			}
+			prev.next=null;
+		}
 		
 	}
 
 	@Override
 	public void searchDelete(int n) {
-		// TODO Auto-generated method stub
+		if(head.data==n) {
+			head=head.next;
+			return;
+		}else {
+			Node current=head;
+			Node prev,temp;
+			while(current!=null && current.next!=null) {
+				if(current.next.data==n) {
+				prev = current;
+				temp= current.next.next;
+				current = temp;
+				prev.next=current;
+				}
+				if(current!=null) {
+				current=current.next;
+				}
+				}
+		}
 		
 	}
 
@@ -68,13 +92,35 @@ public class LinkedList implements List{
 
 	@Override
 	public void print() {
-		// TODO Auto-generated method stub
+		if(head==null)
+		{
+			System.out.println("The linkde list is empty");
+		}else {
+			Node current=head;
+			while(current!=null) {
+				System.out.print(" ->"+current.data);
+				current=current.next;
+			}
+			
+		}
 		
 	}
 
 	@Override
 	public boolean contains(int data) {
-		// TODO Auto-generated method stub
+		if(head!=null) {
+			if(head.data==data) {
+				return true;
+			}else {
+				Node current=head;
+				while(current!=null) {
+					if(current.data==data) {
+						return true;
+					}
+					current=current.next;
+				}
+			}
+		}
 		return false;
 	}
 
