@@ -124,4 +124,23 @@ public class LinkedList implements List{
 		return false;
 	}
 
+	@Override
+	public void reverse() {
+		if(head==null) {
+			System.out.println("The list is null..cannot reverse");
+			return;
+		}else{
+			Node current=head;
+			Node prev=null,next=null;
+			while(current!=null) {
+				next= current.next;
+				current.next=prev;
+				prev=current;
+				current=next;
+		}
+			head=prev;
+		}
+		
+	}
+
 }

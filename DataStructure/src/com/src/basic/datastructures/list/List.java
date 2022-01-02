@@ -9,6 +9,7 @@ public interface List {
 	public void insert();
 	public void print();
 	public boolean contains(int data);
+	public void reverse();
 	
 
 }

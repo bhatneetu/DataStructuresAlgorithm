@@ -19,8 +19,12 @@ public class LinkedListImpl{
 		System.out.println();
 		ls.print();
 		
+		System.out.println("\n Linked list in reverse order is \n");
+		ls.reverse();
+		ls.print();
+		
 		ls.searchDelete(40);
-		System.out.println("\n List is now \n");
+		System.out.println("\n List is now aftr delteing 40\n");
 		ls.print();
 		System.out.println("\n Size of Linked List is:-  "+ls.size());
 		
@@ -37,11 +41,12 @@ public class LinkedListImpl{
 		ls.print();
 		
 		System.out.println("\n  Does list contain 50 \n"+ls.contains(50));
-		System.out.println("\n  Does list contain 50 \n"+ls.contains(10));
+		System.out.println("\n  Does list contain 10 \n"+ls.contains(10));
 		
 		System.out.println("\n  After deleting last element of list \n");
 		ls.deleteLast();
 		ls.print();
+		
 	}
 
 }
