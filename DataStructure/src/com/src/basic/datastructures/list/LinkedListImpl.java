@@ -46,6 +46,8 @@ public class LinkedListImpl{
 		System.out.println("\n  After deleting last element of list \n");
 		ls.deleteLast();
 		ls.print();
+		int m=0,differnce=0;
+		
 		
 	}
 
