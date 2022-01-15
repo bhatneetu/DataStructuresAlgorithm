@@ -10,11 +10,13 @@ public class LinkedListImpl{
 		LinkedList ls= new LinkedList();
 		ls.add(10);
 		ls.add(20);
+		ls.add(10);
 		ls.add(30);
 		ls.add(40);
 		ls.add(50);
+		ls.add(10);
 		ls.add(60);
-		
+		ls.add(10);
 		System.out.println("Size of Linked List is:-  "+ls.size());
 		System.out.println();
 		ls.print();
@@ -23,7 +25,7 @@ public class LinkedListImpl{
 		ls.reverse();
 		ls.print();
 		
-		ls.searchDelete(40);
+		//ls.searchDelete(40);
 		System.out.println("\n List is now aftr delteing 40\n");
 		ls.print();
 		System.out.println("\n Size of Linked List is:-  "+ls.size());
@@ -33,7 +35,7 @@ public class LinkedListImpl{
 		
 		System.out.println("\n List is now \n");
 		ls.print();
-		ls.searchDelete(60);
+		//ls.searchDelete(60);
 		System.out.println("\n Size of Linked List is:-  "+ls.size()+"  head is now"+ls.head.data);
 
 		
@@ -44,7 +46,7 @@ public class LinkedListImpl{
 		System.out.println("\n  Does list contain 10 \n"+ls.contains(10));
 		
 		System.out.println("\n  After deleting last element of list \n");
-		ls.deleteLast();
+		//ls.deleteLast();
 		ls.print();
 		int m=0,differnce=0;
 		
