@@ -44,6 +44,13 @@ public class BinaryTreeMirror {
 		System.out.println("\n\nTree after mirroring...");
 		TreeNode rootNew=tree.mirror(tree.root);
 		tree.inOrder(rootNew);
+		
+		TreeNode root1= new TreeNode(67);
+		root1.left = new TreeNode(57);
+		root1.left.left = new TreeNode(47);
+		root1.left.right = new TreeNode(60);
+		root1.right =new TreeNode(107);
+		BTree tree1=new BTree();
 	}
 
 }

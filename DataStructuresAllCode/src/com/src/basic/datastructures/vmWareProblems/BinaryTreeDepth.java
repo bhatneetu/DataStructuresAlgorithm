@@ -57,6 +57,26 @@ public class BinaryTreeDepth {
 		BTree tree=new BTree();
 		tree.root=root;
 		System.out.println("Height of BinaryTree..."+tree.height(tree.root));
+		System.out.println("Diameter of BinaryTree..."+tree.diameter(tree.root));
+		
+		
+		
+		TreeNode root1= new TreeNode(67);
+		root1.left = new TreeNode(57);
+		root1.left.left = new TreeNode(47);
+		root1.left.right = new TreeNode(60);
+		root1.left.right.left = new TreeNode(58);
+		root1.left.right.right = new TreeNode(61);
+		root1.right =new TreeNode(107);
+		root1.right.right =new TreeNode(130);
+		root1.right.right.right =new TreeNode(151);
+		root1.right.right.right.left =new TreeNode(141);
+		root1.right.right.right.left.right =new TreeNode(143);
+		root1.right.right.right.right =new TreeNode(161);
+		BTree tree1=new BTree();
+		tree1.root =root1;
+		System.out.println("Height of BinaryTree1..."+tree1.height(tree1.root));
+		System.out.println("Diameter of BinaryTree2..."+tree1.diameter(tree1.root));
 	}
 
 }
@@ -66,7 +86,7 @@ class BTree{
 	
 	public int height(TreeNode root) {
 		if(root==null) {
-			return -1;
+			return 0;
 		}
 		TreeNode lft = root.left;
 		TreeNode right = root.right;
@@ -96,6 +116,19 @@ class BTree{
 		inOrder(root.left);
 		System.out.print(" "+root.data);
 		inOrder(root.right);
+	}
+	
+	public int diameter(TreeNode root) {
+		if(root==null) {
+			return 0;
+		}
+		int leftHeight = height(root.left);
+		int righHeight = height(root.right);
+		
+		int lDiameter = diameter(root.left);
+		int rDiameter = diameter(root.right);
+		return Math.max((leftHeight+ righHeight+1), Math.max(lDiameter, rDiameter));
+				
 	}
 	
 }
