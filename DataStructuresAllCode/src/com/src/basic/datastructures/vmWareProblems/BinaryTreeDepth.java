@@ -74,6 +74,30 @@ class BTree{
 		return Math.max(height(lft), height(right))+1;
 	}
 	
+	public TreeNode mirror(TreeNode root) {
+		if(root==null) {
+			return root;
+		}
+		TreeNode left = mirror(root.left);
+		TreeNode right = mirror(root.right);
+		
+		root.left = right;
+		root.right = left;
+		
+		return root;
+		
+	}
+	
+	public void inOrder(TreeNode root) {
+		if(root==null) {
+			//System.out.println("Root is null");
+			return;
+		}
+		inOrder(root.left);
+		System.out.print(" "+root.data);
+		inOrder(root.right);
+	}
+	
 }
 class TreeNode{
 	int data;
