@@ -9,7 +9,11 @@ public class ToBinaryFromArray {
 		for (int i = 0; i < bianry.length; i++) {
 			val+=bianry[i];
 			//System.out.println("Number is..."+val+bianry[i]);
-			System.out.println("Number is..."+val+"Decimal equivalent is.. "+Integer.parseInt(val,2));
+			System.out.println("Number is..."+val+" Decimal equivalent is.. "+Integer.parseInt(val,2));
+			String a="dlsk";
+			char j='a';
+			val.concat(""+j);
+			System.out.println("val"+val);
 		}
 	}
 
