@@ -1,4 +1,4 @@
-package com.src.basic.simlebaicalgo;
+package com.src.basic.simplebasicalgo;
 
 import java.math.BigInteger;
 
