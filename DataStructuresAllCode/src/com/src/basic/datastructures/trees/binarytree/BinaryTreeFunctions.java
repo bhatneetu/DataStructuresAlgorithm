@@ -42,8 +42,8 @@ public class BinaryTreeFunctions {
 		root2.left= left2;
 		root2.right= right2;
 		bt2.root=root2;
-		
-		
+		Node n=bt2.lcaNode(root2, left2.left, left2.right);
+		System.out.println("LCA(14,18)="+n.data);
 		
 		
 		
@@ -247,5 +247,24 @@ class BinaryTree{
 		node.right= left;
 		
 		return node;
+	}
+	Node lcaNode(Node root,Node n1,Node n2) {
+		if(root==null) {
+			return null;
+		}
+		if(root.data==n1.data || root.data==n2.data) {
+			return root;
+		}
+		
+		Node left_lca=lcaNode(root.left, n1, n2);
+		Node right_lca=lcaNode(root.right, n1, n2);
+		
+		
+		if(left_lca!=null && right_lca!=null) {
+			return root;
+		}
+		return (left_lca!=null) ? left_lca :right_lca;
+		
+		
 	}
 }
