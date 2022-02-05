@@ -23,8 +23,11 @@ class CalculateBankBalance{
 		int[] negativeCounter=new int[12];
 		Arrays.fill(negativeSum, 0);
 		Arrays.fill(negativeCounter, 0);
-		
+		//Find length
 		int len=A.length;
+		//1. add the sum of all balances to final sum
+		//2. if the value is -ve update the -ve sum for that month
+		//3. keep -ve counter for each month
 		for(int i=0;i<len;i++) {
 			finalBalnce = finalBalnce + A[i];
 			int month=getMonth(D[i]);
@@ -39,6 +42,7 @@ class CalculateBankBalance{
 			}
 			
 		}
+		//Final bals= final balance - fee * (number of months for which counter <=-3 and corresponding -ve sum <= -100
 		int anualBal= finalBalnce -((12-getMonthsConsideredForFee(negativeSum,negativeCounter))*5);
 		
 		return anualBal;
