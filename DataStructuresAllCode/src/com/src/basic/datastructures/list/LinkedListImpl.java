@@ -50,6 +50,11 @@ public class LinkedListImpl{
 		ls.print();
 		int m=0,differnce=0;
 		
+		ls.reversebyK(ls.head,3);
+		System.out.println("\n  After reversing by n \n");
+		//ls.deleteLast();
+		ls.print();
+		
 		
 	}
 

@@ -142,5 +142,35 @@ public class LinkedList implements List{
 		}
 		
 	}
+	
+	public Node reversebyK(Node node,int k) {
+		System.out.println("Inside...");
+		
+			Node current=node;
+			Node prev=null,next=null;
+			int count=0;
+			while(current!=null && count<k) {
+				next= current.next;
+				current.next=prev;
+				prev=current;
+				current=next;
+				count++;
+		}
+			if(node!=null) {
+				node.next = current;
+			}
+			count=0;
+			while(count<k-1 && current !=null) {
+				current = current.next;
+				count++;
+			}
+			//head=prev;
+			while(current!=null) {
+				current.next = reversebyK(current,k);
+			}
+			return prev;
+		
+		
+	}
 
 }

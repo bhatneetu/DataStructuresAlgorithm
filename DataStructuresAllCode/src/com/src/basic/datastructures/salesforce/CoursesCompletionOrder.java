@@ -44,6 +44,7 @@ class CourseCompletionStatus{
 		
 		for(int i=0;i<numberOfCourse;i++) {
 			adj[i] =new ArrayList<Integer>();
+			
 		}
 		for(int[] n: prerequisites) {
 			adj[n[0]].add(n[1]);
